@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 90%;
+    height: 40px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #D5D5D5;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.entrar {
+
+    width: 90%;
+    height: 40px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    border: 0px;
+    background: #52B6FF;
+    font-family: 'Lexend Deca', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.irParaCadastro{
+    margin-top: 15px;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-decoration-line: underline;
+
+    color: #52B6FF;
+    border: 0px;
+    background-color: #FFFFFF;
+}

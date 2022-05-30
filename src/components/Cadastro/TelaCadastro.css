@@ -1,0 +1,13 @@
+input {
+    width: 90%;
+    height: 40px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #D5D5D5;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.container-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
