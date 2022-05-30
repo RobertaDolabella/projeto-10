@@ -6,11 +6,18 @@ import UserContext from '../../contexts/UserContext'
 import "./TelaLogin.css"
 import logo from '../../Shared/Group 8.jpg'
 export default function TelaLogin(){
-    const {email, setEmail, password, setPassword, setToken, setFoto} = useContext(UserContext)
+    const {email, setEmail, password, setPassword, setToken, token, setFoto, setDadosToken} = useContext(UserContext)
     const navigate = useNavigate();
     function gerarToken(data){
         setToken(data.token)
-        setFoto(data.image)
+        setFoto(data.image) 
+        const dataStorage = {token:data.token, foto:data.image}
+        const dataSerializada = JSON.stringify(dataStorage)
+        localStorage.setItem("dataLocal", dataSerializada)
+        const dataLocalSerializada = localStorage.getItem("dataLocal")
+        const dataLocal = JSON.parse(dataLocalSerializada)
+        const tokenLocal = dataLocal.token
+        
         navigate('/habitos')
     }
     function login(event){
@@ -19,6 +26,7 @@ export default function TelaLogin(){
             email,
             password
         }   
+
         const response = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', userlogin)
         response.then(({ data })=> gerarToken(data))
         

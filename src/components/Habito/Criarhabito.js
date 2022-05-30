@@ -1,10 +1,13 @@
 import axios from "axios"
 import { useEffect } from "react"
-export default function CriarHabitos({ setListaHabitos, listaHabitos, token }) {
+export default function CriarHabitos({ setListaHabitos, listaHabitos}) {
     const GET = ('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits')
+    const dataLocalSerializada = localStorage.getItem("dataLocal")
+        const dataLocal = JSON.parse(dataLocalSerializada)
+        const tokenLocal = dataLocal.token
     const autorizacao = {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${tokenLocal}`
         }
     }
     const diasSemana =[

@@ -18,6 +18,7 @@ function App() {
   const [listaSemana, setListaSemana] = useState([])
   const [habitosDeHoje, setHabitosDeHoje] = useState([])
   const [habitoFeito, setHabitoFeito] = useState()
+  const [dadosToken, setDadosToken] = useState()
   const [listaCalendarioSemana, setListaCalendarioSemana] = useState([
     { id: 1, dia: "D", selecionado: false },
     { id: 2, dia: "S", selecionado: false },
@@ -42,7 +43,8 @@ function App() {
          listaCalendarioSemana, setListaCalendarioSemana , 
          listaHabitos, setListaHabitos, 
          habitosDeHoje, setHabitosDeHoje, 
-         habitoFeito, setHabitoFeito}}>
+         habitoFeito, setHabitoFeito,
+         dadosToken, setDadosToken}}>
         <Routes>
           <Route path='/' element={<TelaLogin />} />
           <Route path='/cadastro' element={<TelaCadastro />} />

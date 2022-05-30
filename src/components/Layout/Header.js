@@ -1,11 +1,12 @@
 import { useContext } from "react"
-import UserContext from "../../contexts/UserContext"
 export default function Header(){
-    const {foto} = useContext(UserContext);
+    const dataLocalSerializada = localStorage.getItem("dataLocal")
+        const dataLocal = JSON.parse(dataLocalSerializada)
+        const fotoLocal = dataLocal.foto
     return(
         <div className="header">
             <h1 className="header-tiulo"> TrackIt </h1>
-            <img className="foto-usuario" src={foto} alt="foto do usuario" width='70px' height='70px'/>
+            <img className="foto-usuario" src={fotoLocal} alt="foto do usuario" width='70px' height='70px'/>
         </div>
     )
 }

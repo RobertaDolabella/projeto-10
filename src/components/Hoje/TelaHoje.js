@@ -11,10 +11,11 @@ export default function TelaHoje() {
     const { token, habitosDeHoje, setHabitosDeHoje, habitoFeito, setHabitoFeito } = useContext(UserContext)
     const diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"]
     const GETHOJE = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today'
-    const POSTFEITO = ''
+    const tokenLocalSerializada = localStorage.getItem("tokenLocal")
+    const tokenLocal = JSON.parse(tokenLocalSerializada)
     const autorizacao = {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${tokenLocal}`
         }
     }
     function GerarHabitos() {
